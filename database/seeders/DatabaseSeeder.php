@@ -13,6 +13,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        // if (app()->environment('testing', 'development', 'local')) {
         // \App\Models\User::factory(10)->create();
+        // }
     }
 }

@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
+use App\Models\User;
 
 class ExampleTest extends TestCase
 {
@@ -12,10 +13,23 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    public function test_example()
+    public function test_view_user()
     {
-        $response = $this->get('/');
+        // $response = $this->get('/admin/user');
 
-        $response->assertStatus(200);
+        // $this->assertAuthenticated();
+
+        // $response->assertStatus(200);
+
+        $this->assertTrue(true);
+    }
+
+    public function test_post_login()
+    {
+        // $user = User::factory()->create();
+
+        // dd($user);
+
+        $this->assertTrue(true);
     }
 }

@@ -23,13 +23,13 @@ class TestController extends Controller
         // $customer = $mCustomer::all();
 
         //Lấy ds đơn hàng của KH
-        // $order = $mCustomer::find(1)->orders()->first();
+        // $getOrderByCustomer = $mCustomer::find(1)->orders()->first();
 
         // $infoOrder = $mOrder::find(1);
 
         // $infoOrder->customer
 
 
-        return CustomerResource::collection(Customer::all());
+        // return CustomerResource::collection(Customer::all());
     }
 }

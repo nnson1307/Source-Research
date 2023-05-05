@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomersController;
 use App\Http\Resources\CustomerResource;
 use App\Models\Customer;
 use Illuminate\Support\Facades\Route;
@@ -34,10 +35,12 @@ Route::group(['middleware' => [], 'prefix' => '', 'namespace' => 'App\Http\Contr
     Route::get('logout', 'LoginController@logoutAction')->name('logout');
 });
 
-Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'namespace' => 'App\Http\Controllers'], function () {
-    Route::group(['prefix' => 'user'], function () {
+Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function () {
+    Route::group(['prefix' => 'user', 'namespace' => 'App\Http\Controllers'], function () {
         Route::get('/', 'UserController@index')->name('admin.user');
     });
+
+    Route::resource('customers', CustomersController::class);
 });
 
 
