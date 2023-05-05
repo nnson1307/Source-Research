@@ -46,4 +46,12 @@ class Customers extends Model
     {
         return $this->hasMany(Profiles::class, 'customer_id');
     }
+
+    /**
+     * Get all of the customers's images
+     */
+    public function images()
+    {
+        return $this->morphMany(Images::class, 'imageable');
+    }
 }
