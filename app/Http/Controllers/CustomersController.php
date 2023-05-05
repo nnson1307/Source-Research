@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Customers;
 use App\Models\Images;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
-use Illuminate\Contracts\Support\Jsonable;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Relations\Relation;
 
 class CustomersController extends Controller
 {
@@ -41,41 +41,40 @@ class CustomersController extends Controller
 
     public function create()
     {
-
     }
 
     public function store()
     {
-
     }
 
+    /**
+     * View customer details 
+     *
+     * @param mixed $customerId
+     * 
+     * @return void
+     */
     public function show($customerId)
     {
         //Get info customer
         $info = $this->customer->find($customerId);
-
-        // $mImage = app()->get(Images::class);
-        // $mImage->path = '123456.png';
-
-        // $info->images()->save($mImage);
 
         return view('customer.show', [
             'info' => $info
         ]);
     }
 
-    public function edit()
+    public function edit($customerId)
     {
-
+        //Get info customer
+        $info = $this->customer->find($customerId);
     }
 
     public function update()
     {
-
     }
 
     public function destroy()
     {
-        
     }
 }
