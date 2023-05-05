@@ -54,10 +54,10 @@ class CustomersController extends Controller
         //Get info customer
         $info = $this->customer->find($customerId);
 
-        $mImage = app()->get(Images::class);
-        $mImage->path = '123456.png';
+        // $mImage = app()->get(Images::class);
+        // $mImage->path = '123456.png';
 
-        $info->images()->save($mImage);
+        // $info->images()->save($mImage);
 
         return view('customer.show', [
             'info' => $info
