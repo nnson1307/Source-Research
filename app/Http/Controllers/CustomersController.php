@@ -76,6 +76,6 @@ class CustomersController extends Controller
 
     public function destroy()
     {
-
+        
     }
 }
