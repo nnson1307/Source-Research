@@ -21,11 +21,11 @@
                                 <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
                             </svg>
                         </span>
-                        <input type="email" class="form-control" placeholder="example@company.com" id="email"
+                        <input type="text" class="form-control" placeholder="example@company.com" id="email"
                             name="email">
                     </div>
                     @if($errors->has('email'))
-                        <div class="error">{{ $errors->first('email') }}</div>
+                        <div class="error">{{$errors->first('email')}}</div>
                     @endif
                 </div>
                 <!-- End of Form -->
@@ -46,8 +46,8 @@
                                 name="password">
                         </div>
                         @if($errors->has('password'))
-                        <div class="error">{{ $errors->first('password') }}</div>
-                    @endif
+                            <div class="error">{{ $errors->first('password') }}</div>
+                        @endif
                     </div>
                     <!-- End of Form -->
                     <div class="d-flex justify-content-between align-items-top mb-4">

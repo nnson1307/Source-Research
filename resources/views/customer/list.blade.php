@@ -53,4 +53,4 @@
     </table>
 </div>
 
-{{ $LIST->appends($filter ?? null)->links('pagination') }}
+{{ $LIST->appends(request()->all())->links('pagination') }}

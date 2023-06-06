@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Customers;
 use App\Models\Images;
 use Illuminate\Http\Request;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Relations\Relation;
+use Illuminate\Support\Facades\URL;
 
 class CustomersController extends Controller
 {
@@ -34,8 +33,7 @@ class CustomersController extends Controller
         return view('customer.index', [
             'LIST' => $listCustomer,
             'page' => $filter['page'] ?? 1,
-            'perpage' => $filter['perpage'] ?? 10,
-            'filter' => $filter
+            'perpage' => $filter['perpage'] ?? 10
         ]);
     }
 

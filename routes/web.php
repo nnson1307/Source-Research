@@ -4,6 +4,8 @@ use App\Http\Controllers\CustomersController;
 use App\Http\Resources\CustomerResource;
 use App\Models\Customer;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +43,14 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function () {
     });
 
     Route::resource('customers', CustomersController::class);
+
+    Route::get('/unsubscribe/{user}', function (Request $request) {
+        if (! $request->hasValidSignature()) {
+            abort(403);
+        }
+
+        echo(1);
+    })->name('unsubscribe');
 });
 
 

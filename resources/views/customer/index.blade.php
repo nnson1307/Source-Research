@@ -34,7 +34,7 @@
                                 clip-rule="evenodd"></path>
                         </svg>
                     </button>
-                    <input type="text" name="search" class="form-control" value="{{$filter['search'] ?? ''}}" placeholder="Search...">
+                    <input type="text" name="search" class="form-control" value="{{Request::get('search')}}" placeholder="Search...">
                 </div>
             </div>
         </div>
